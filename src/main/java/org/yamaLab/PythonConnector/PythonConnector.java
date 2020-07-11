@@ -111,7 +111,14 @@ public class PythonConnector implements InterpreterInterface, Runnable{
 
 	public String parseCommand(String x) {
 		// TODO 自動生成されたメソッド・スタブ
-		this.send(x);
+		if(x.equals("wikiStartWatching")){
+			String host="localhost";
+			int port=9998;
+			this.connect(host, port);
+		}
+		else{
+		  this.send(x);
+		}
 		return "OK";
 	}
 

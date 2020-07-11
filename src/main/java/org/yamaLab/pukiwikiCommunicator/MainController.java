@@ -831,6 +831,15 @@ implements PukiwikiJavaApplication, TwitterApplication, InterpreterInterface, Ru
 		}
 		else
 		if(cmd.startsWith("wikiStartWatching")){
+			if(this.pycon!=null){
+			  this.pycon.parseCommand(cmd);
+			  try{
+				Thread.sleep(20000);
+			  }
+			  catch(InterruptedException e){
+				
+			  }
+			}
 			this.start();
 			return false;
 		}
