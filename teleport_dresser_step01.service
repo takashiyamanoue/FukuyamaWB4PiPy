@@ -1,10 +1,11 @@
 [Unit]
 Description=teleport dresser service
+Before=teleport_dresser_step02.service
 
 [Service]
-ExecStart=/bin/sh start_teleport_dresser_ex1.sh
+ExecStart=/usr/bin/python3 tcp_server_ex1.py
 WorkingDirectory=/home/pi/workspace/FukuyamaWB4PiPy
-Type=once
+Type=forking
 RemainAfterExit=yes
 StandardOutput=inherit
 StandardError=inherit
