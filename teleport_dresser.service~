@@ -1,0 +1,13 @@
+[Unit]
+Description=teleport dresser service
+
+[Service]
+ExecStart=/bin/sh /home/pi/workspace/FukuyamaWB4PiPy/start_teleport_dresser.sh
+WorkingDirectory=/home/pi/workspace/FukuyamaWB4PiPy
+StandardOutput=inherit
+StandardError=inherit
+Restart=always
+User=pi
+
+[Install]
+WantedBy=multi-user.target
