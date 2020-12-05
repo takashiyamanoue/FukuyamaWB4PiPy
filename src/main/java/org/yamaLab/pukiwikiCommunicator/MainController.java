@@ -36,6 +36,7 @@ implements PukiwikiJavaApplication, TwitterApplication, InterpreterInterface, Ru
 	private int maxCommands;
 	private CommandReceiver gui;
 	TwitterController twitterController;
+	private boolean usingTwitter;
 //	private ClassWithJTable commandTableClass;
 	String currentPage;
 	public long readCommandInterval=0; // default 10 min.
@@ -639,12 +640,14 @@ implements PukiwikiJavaApplication, TwitterApplication, InterpreterInterface, Ru
 			sendResultInterval=getSendRequestInterval();
 //			long returnInterval=getResultReturnInterval();
 			if(time>lastCommandRequest+readInterval){
-				this.writeMessage("connectionButton");
-				String urlx=gui.command("getWikiUrl", "");
-				this.commandTableIndex.clear();
-				this.commandTable.clear();
-				this.connectButtonActionPerformed(urlx);
-				lastCommandRequest=System.currentTimeMillis();
+				synchronized(this){
+				  this.writeMessage("connectionButton");
+				  String urlx=gui.command("getWikiUrl", "");
+				  this.commandTableIndex.clear();
+				  this.commandTable.clear();
+				  this.connectButtonActionPerformed(urlx);
+				  lastCommandRequest=System.currentTimeMillis();
+				}
 			}
 			if(execInterval>0 && time>lastExec+execInterval){
 				execCommands();
@@ -840,6 +843,10 @@ implements PukiwikiJavaApplication, TwitterApplication, InterpreterInterface, Ru
 				
 			  }
 			}
+			return false;
+		}
+		else
+		if(cmd.startsWith("startMain")){
 			this.start();
 			return false;
 		}
@@ -855,8 +862,16 @@ implements PukiwikiJavaApplication, TwitterApplication, InterpreterInterface, Ru
 		}
 		else
 		if(cmd.startsWith("twitterConnect")){
-			twitterController.parseCommand("login", "");
-			return false;
+			if((this.gui.command("getTwitterAutoConnect","")).equals("true")){
+				try{
+			      twitterController.parseCommand("login", "");
+			      return false;
+				}
+				catch(Exception e){
+				  System.out.println("twitter connect error:"+e);	
+				}
+			   return false;
+			}
 		}
 		else
 		if(cmd.startsWith("twitterTweet")){
@@ -872,6 +887,18 @@ implements PukiwikiJavaApplication, TwitterApplication, InterpreterInterface, Ru
 				this.tracing=false;
 			}
 			return false;
+		}
+		else
+		if(cmd.equals("twitterAutoConnectCheckBox")){
+			System.out.println("MainController, parseCommand :"+cmd+". v="+v);
+			if(v.equals("true")){
+				usingTwitter=true;
+			}
+			else
+			if(v.equals("false")){
+				usingTwitter=false;
+			}
+			this.parseCommand("saveProperties");			
 		}
 
 		else
@@ -935,7 +962,8 @@ implements PukiwikiJavaApplication, TwitterApplication, InterpreterInterface, Ru
 		}
 		twitterController.parseCommand("tweet", tw);
 	}
-	synchronized private void execCommands(){
+//	synchronized 
+	private void execCommands(){
 //		JTable commandTable=commandTableClass.getJTable("commandTable");
 //		if(commandTable==null) return;
 //		int tmax=commandTable.getRowCount();

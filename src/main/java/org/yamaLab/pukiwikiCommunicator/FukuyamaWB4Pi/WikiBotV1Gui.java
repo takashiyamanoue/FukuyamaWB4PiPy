@@ -117,6 +117,8 @@ public class WikiBotV1Gui extends JFrame implements CommandReceiver, ClassWithJT
 	private JTable oTable;
 	private JScrollPane idListAreaPane;
 	private JLabel idListLabel;
+	
+	private JCheckBox twitterAutoConnectCheckBox;
 
 
 	/**
@@ -242,6 +244,21 @@ public class WikiBotV1Gui extends JFrame implements CommandReceiver, ClassWithJT
 		});
 		savePropertiesButton.setBounds(530, 0, 165, 29);
 		mainPanel.add(savePropertiesButton);
+		
+		twitterAutoConnectCheckBox = new JCheckBox();
+		mainPanel.add(twitterAutoConnectCheckBox);
+		twitterAutoConnectCheckBox.setText("auto connect");
+		twitterAutoConnectCheckBox.setBounds(10, 40, 120, 25);
+		twitterAutoConnectCheckBox.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent evt) {
+//				onlineCommandRefreshButtonActionPerformed(evt);
+//				reflectProperties();
+//				saveProperties();
+				String ac=twitterAutoConnectCheckBox.isSelected()?"true":"false";
+				mainController.parseCommand("twitterAutoConnectCheckBox",ac);
+			}
+		});	
+    	
 		
 		}
 		catch(Exception e){
@@ -605,7 +622,9 @@ public class WikiBotV1Gui extends JFrame implements CommandReceiver, ClassWithJT
 			startWatchingButton.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent evt) {
 //					startWatchingButtonActionPerformed(evt);
-					mainController.parseCommand("wikiStartWatching", "");
+//					mainController.parseCommand("wikiStartWatching", "");
+//					mainController.parseCommand("pyConConnect","");
+					startAppli();
 				}
 			});
 		}
@@ -1071,6 +1090,16 @@ public class WikiBotV1Gui extends JFrame implements CommandReceiver, ClassWithJT
         if(w!=null){
         	this.accessTokenSecretTextField.setText(w);
         }		
+        w=this.setting.getProperty("tiwtterAutoConnect");
+        if(w!=null){
+        	if(w.equals("true")){
+        	   this.twitterAutoConnectCheckBox.setSelected(true);
+        	}
+        	else{
+        		this.twitterAutoConnectCheckBox.setSelected(false);
+        	}
+        }
+
 	}
 	public void reflectProperties(){
 		if(this.setting==null)return;
@@ -1086,6 +1115,8 @@ public class WikiBotV1Gui extends JFrame implements CommandReceiver, ClassWithJT
 		setting.put("oauth.accessToken", this.accessTokenTextField.getText());
 		setting.put("oauth.accessTokenSecret", this.accessTokenSecretTextField.getText());
 		setting.put("maxCommandsStr", this.maxComField.getText());
+		String tf=this.twitterAutoConnectCheckBox.isSelected()?"true":"false";
+		setting.put("tiwtterAutoConnect", tf);
 		String uname=auth1ID.getText();
 		char[] pwd=password1Field.getPassword();
 		String pwdx=new String(pwd);
@@ -1234,6 +1265,10 @@ public class WikiBotV1Gui extends JFrame implements CommandReceiver, ClassWithJT
 		if(x.equals("saveProperties")){
 			this.saveProperties();
 		}
+		else
+		if(x.equals("getTwitterAutoConnect")){
+			return this.twitterAutoConnectCheckBox.isSelected()?"true":"false";
+		}
 		else{
 		   return null;
 		}
@@ -1299,7 +1334,12 @@ public class WikiBotV1Gui extends JFrame implements CommandReceiver, ClassWithJT
 	public void startAppli(){
 		 if(this.mainController!=null){
 			 mainController.parseCommand("pyConConnect", "");
+			 mainController.parseCommand("twitterConnect", "");
+			 mainController.parseCommand("startMain","");
 		 }
+	}
+	public boolean getTwitterAutoConnect(){
+		return this.twitterAutoConnectCheckBox.isSelected();
 	}
 	
 }
