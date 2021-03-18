@@ -32,7 +32,7 @@ import cv2
 import numpy as np
 from moviepy.editor import ImageSequenceClip
 # coding: utf-8
-from PIL import Image
+from PIL import Image, ImageFont, ImageDraw
 import smbus
 import time
 import sys
@@ -42,6 +42,7 @@ import socket
 import threading
 from collections import deque
 import subprocess
+import copy
 
 #from PIL import Image
 #import smbus
@@ -83,6 +84,18 @@ class RemoteCommandReader:
           print(fx)
           print(self.teleport_dress)
           self.teleport_dress.putImage(fx)
+      elif words[0]=='text':
+          if len(words)>=2:
+             words.pop(0)
+             fx  = ' '.join(words)
+          else:
+             fx=""
+          print("text "+fx)
+          self.teleport_dress.putText(fx)
+      elif words[0]=='txtColor':
+          fx=words[1]
+          print("txtColor "+fx)
+          self.teleport_dress.setTextColor(fx)
       elif words[0]=='clear':
           self.teleport_dress.clearImage()
       elif words[0]=='ls':
@@ -128,15 +141,42 @@ class Teleport_Dress:
 #  dx=img_width/jmax
 #  dy=img_height/imax
 
+  impose_text=""
+  text_color=(0,0,0)
+
 
   def __init__(self):
     print("start Teleport_Dress.__init__")
+    self.font_path = './font/font_jb004_running_brush_wi.ttf'
     self.pixels=[[(0,0,0) for j in range(self.jmax)] for i in range(self.imax)]
     self.addrs = [0x30,0x31,0x32,0x33]
     self.fourpix=[0x00, 0x00, 0x04, 0,0,0, 0,0,0, 0,0,0, 0,0,0]
     self.i2c = smbus.SMBus(1) # 注:ラズパイのI2Cポート
     self.queue=deque([])
     self.show_loop_start()
+    self.text_x=0
+
+  def setTextColor(self,x):
+      if x=="white":
+          self.text_color=(255,255,255)
+      elif x=="black":
+          self.text_color=(0,0,0)
+      elif x=="red":
+          self.text_color=(255,0,0)
+      elif x=="green":
+          self.text_color=(0,255,0)
+      elif x=="blue":
+          self.text_color=(0,0,255)
+      elif x=="yellow":
+          self.text_color=(255,255,0)
+      elif x=="cyan":
+          self.text_color=(0,255,255)
+      elif x=="magenta":
+          self.text_color=(255,0,255)
+      elif x=="orange":
+          self.text_color=(255,128,0)
+      elif x=="pink":
+          self.text_color=(200,80,80)
 
   def setRemoteCommandReader(self, x):
     self.rcReader=x
@@ -160,6 +200,8 @@ class Teleport_Dress:
       gif = cv2.VideoCapture(path)
       print("gif=",gif)
     except:
+      import traceback
+      traceback.print_exc()
       rtn="error: show ...no "+file_name
       self.rcReader.pythohn2fwb(rtn)
       gif = cv2.VideoCapture('/home/pi/Pictures/giphy-girl-ex1.gif')
@@ -176,6 +218,31 @@ class Teleport_Dress:
       i+=1
     ex=('anime',images)
     return ex
+
+  def pic2imgs(self,file_name):
+    print("pic2imgs("+file_name+")")
+    img=[]
+    #subprocess.call(["cd","~/Pictures"])
+    try:
+      img = Image.open("/home/pi/Pictures/"+file_name)
+      #print("img open success.");
+      #self.show_one_pic(img)
+    except:
+      import traceback
+      traceback.print_exc()
+      rtn="error: show "+file_name
+      self.rcReader.python2fwbln(rtn)
+    #fps = gif.get(cv2.CAP_PROP_FPS)  # fpsは１秒あたりのコマ数
+    images = []
+    i = 0
+    for i in range(5):
+      img2=copy.copy(img)
+      #self.show_one_pic(img2)
+      images.append(img2)
+    #print(i)
+    #print("images-len="+str(len(images)))
+    rtn=('img',images)
+    return rtn
 
   def clearImage(self):
     ex=('clear','x')
@@ -202,6 +269,7 @@ class Teleport_Dress:
       elif xname.endswith('.jpg') or xname.endswith('.JPG') or \
            xname.endswith('.JPEG') or xname.endswith('.jpeg'):
         ex=('img',xname)
+        #ex=self.pic2imgs(xname)
         self.queue.append(ex)
       elif xname.endswith('.png') or xname.endswith('.PNG'):
         ex=('img',xname)
@@ -216,17 +284,22 @@ class Teleport_Dress:
         self.queue.append(ex)
       elif xname.endswith('.jpg') or xname.endswith('.JPG') or \
            xname.endswith('.JPEG') or xname.endswith('.jpeg'):
+        #ex=self.pic2imgs(xname)
         ex=('img',xname)
         self.queue.append(ex)
       elif xname.endswith('.png') or xname.endswith('.PNG'):
         ex=('img',xname)
+        #ex=self.pic2imgs(xname)
         self.queue.append(ex)
       print("queue="+str(len(self.queue)))
+      
+  def putText(self,txt):
+      self.impose_text=txt
 
   def show_loop_start(self):
       """show_loop_start"""
-      handle_thread = threading.Thread(target=self.handler, daemon=True)
-      handle_thread.start()
+      self.handle_thread_01 = threading.Thread(target=self.handler, daemon=True)
+      self.handle_thread_01.start()
  
   def handler(self):
       """queueからメッセージを受信し、表示する"""
@@ -239,22 +312,25 @@ class Teleport_Dress:
               kimg=self.queue.popleft()
               print("handler, kimg[0]="+kimg[0])
               if kimg[0]=='anime':
-                last_anime=kimg[1]
-                self.show_one_anime(last_anime)
+                last_anime=kimg
+                self.show_one_anime_x(kimg)
               elif kimg[0]=='img':
-                last_anime=[]
-                self.show_jpg_png(kimg[1])
+                print("handler, kimg[0]="+kimg[0]+" kimg[1]="+kimg[1])
+                x=self.pic2imgs(kimg[1])
+                last_anime=x
+                self.show_one_anime_x(x)
               elif kimg[0]=='clear':
                 last_anime=[]
+                self.impose_text=""
                 self.clear_pic()
           else:
              if last_anime!=[]:
-                self.show_one_anime(last_anime)
+                 self.show_one_anime_x(last_anime)
              else:
                 time.sleep(0.1)
         except:
           if last_anime!=[]:
-            self.show_one_anime(last_anime)
+            self.show_one_anime_x(last_anime)
   def show_jpg_png(self,file_name):
     print("show_jpg_png("+file_name+")")
     #subprocess.call(["cd","~/Pictures"])
@@ -262,10 +338,18 @@ class Teleport_Dress:
       img = Image.open("/home/pi/Pictures/"+file_name)
       self.show_one_pic(img)
     except:
+      import traceback
+      traceback.print_exc()
       rtn="error: show "+file_name
       self.rcReader.python2fwbln(rtn)
+  def show_one_anime_x(self,images):
+      if images[0]=='anime':
+          self.show_one_anime(images[1])
+      elif images[0]=='img':
+          self.show_one_anime2(images[1])
 
   def show_one_anime(self,images):
+      #print("show_one_anime() images-len="+str(len(images)))
       try:
         for t in range(len(images)):
           #cv2.imshow('test', images[t])
@@ -274,9 +358,28 @@ class Teleport_Dress:
       except KeyboardInterrupt:
         print('stop by ctrl-c')
       except:
+        import traceback
+        traceback.print_exc()
         rtn="error: show gif"
         self.rcReader.python2fwbln(rtn)
+        self.handle_thread_01.stop()
                 
+  def show_one_anime2(self,images):
+      #print("show_one_anime2() images-len="+str(len(images)))
+      try:
+        for t in range(len(images)):
+          #cv2.imshow('test', images[t])
+          #cv2.waitKey(int(1000/fps))
+          self.show_one_pic(images[t])
+      except KeyboardInterrupt:
+        print('stop by ctrl-c')
+      except:
+        import traceback
+        traceback.print_exc()
+        rtn="error: show anime2(jpg/png)"
+        self.rcReader.python2fwbln(rtn)
+        self.handle_thread_01.stop()
+
 #
 # command:
 #   clear... 0x00
@@ -287,12 +390,29 @@ class Teleport_Dress:
 #         ... 0x03 *,*, *, *,*,*, ..., *,*,*
 #
           
-  def show_one_pic(self,img):
-    img_width, img_height = img.size
-    #print('width:',img_width)
-    #print('height:',img_height)
+  def show_one_pic(self,img_in):
+    #print('show_one_pic width:',img_width)
+    #print('show_one_pic height:',img_height)
     #print("show_one_pic")
-
+    wwx,wwy=img_in.size
+    fs=int(wwy/2)
+    px=self.text_x
+    py=int(wwx/4)
+    if self.impose_text!="":
+        img = img_in.copy()
+        font = ImageFont.truetype(self.font_path, fs)
+        draw = ImageDraw.Draw(img)
+        draw.text((px,py), self.impose_text, fill=self.text_color, font=font)
+        #img=self.puttext(img_in, self.impose_text, (px,py), self.font_path, fs, (0,0,0))
+        size = draw.textsize(self.impose_text, font=font)
+        if self.text_x+size[0]<(wwx-wwx/3):
+            self.text_x=wwx-wwx/3
+        else:
+            self.text_x=self.text_x-int(wwx/27)
+        #print("text_size=("+str(size[0])+",",str(size[1])+")")
+    else:
+       img=img_in
+    img_width, img_height = img.size
     dx=img_width/self.jmax
     dy=img_height/self.imax
     #print("dx=",dx)
