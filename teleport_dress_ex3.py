@@ -53,8 +53,8 @@ import copy
 
 class RemoteCommandReader:
     sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-    HOST = 'localhost'
-    PORT = 9998
+    HOST = 'www.yama-lab.org'
+    PORT = 8080
     def __init__(self):
         print("start RemoteCommandReader.__init__")
         self.client_start()
@@ -117,14 +117,23 @@ class RemoteCommandReader:
       
     def client_start(self):
       """クライアントのスタート"""
-      self.sock.connect((self.HOST, self.PORT))
-      handle_thread = threading.Thread(target=self.handler, args=(self.sock,), daemon=True)
-      handle_thread.start()
- 
+      print("start client")
+      try:
+          self.sock.connect((self.HOST, self.PORT))
+          handle_thread = threading.Thread(target=self.handler, args=(self.sock,), daemon=True)
+          print("success connect to "+str(self.HOST)+","+str(self.PORT))
+          handle_thread.start()
+      except:
+          traceback.print_exec()
+          rtn="error: connect failure"
+          self.rcReader.pythohn2fwb(rtn)
+
     def handler(self,sock):
+      print("start receive messsage handler")
       """サーバからメッセージを受信し、表示する"""
  
       while True:
+        print("before-recv.")
         data = sock.recv(1024)
         print("[受信]{}".format(data.decode("utf-8")))
         line=data.decode("utf-8")
