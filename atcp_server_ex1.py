@@ -38,21 +38,25 @@ def handler(con, address):
 
 	while True:
 		try:
-			data = con.recv(1024)
+		    data = con.recv(1024)
 		except ConnectionResetError:
-			remove_connection(con, address)
-			break
+		    print("connectionResetError")
+		    remove_connection(con, address)
+		    break
 		else:
-			if not data:
-				remove_connection(con, address)
-				break
-			else:
-				print("[receive]-"+str(address)+"-"+str(data))
-				for c in clients:
-					if c[0]!=con:
-						while data:
-							n = c[0].sendto(data,c[1])
-							data = data[n:]
+		    if not data:
+		      print("not data")
+		      remove_connection(con, address)
+		      break
+		    else:
+		      print("[receive]-"+str(address)+"-"+str(data))
+		      for c in clients:
+		        if c[0]!=con:
+			  print("to addr="+str(c[1]))
+			  #while data:
+			  #n = c[0].sendto(data,c[1])
+			  (c[0]).send(data)
+			  #data = data[n:]
 
 if __name__ == "__main__":
 	server_start()
