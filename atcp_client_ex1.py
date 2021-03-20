@@ -41,12 +41,12 @@ class RemoteCommandReader:
                 msg=input()
             except KeyboardInterrupt:
                 sock.send(msg.encode('utf-8'))
-                try:
-                    sock.send(msg.encode('utf-8'))
-                except ConnectionRefuseError:
-                    break
-                except ConnectionResetError:
-                    break
+            try:
+                sock.send(msg.encode('utf-8'))
+            except ConnectionRefuseError:
+                break
+            except ConnectionResetError:
+                break
 
 def main():
     RemoteCommandReader()
