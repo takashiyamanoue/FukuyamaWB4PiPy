@@ -47,7 +47,7 @@ def handler(con, address):
 				remove_connection(con, address)
 				break
 			else:
-				print("[receive]-"+str(address)+"-"+str(data.decode("utf-8")))
+				print("[receive]-"+str(address)+"-"+str(data))
 				for c in clients:
 					if c[0]!=con:
 						while data:
