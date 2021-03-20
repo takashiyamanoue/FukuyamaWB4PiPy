@@ -4,7 +4,7 @@ import subprocess
 
 class RemoteCommandReader:
     sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-    HOST = 'localhost'
+    HOST = 'www.yama-lab.org'
     PORT = 8080
     clients = []
 
