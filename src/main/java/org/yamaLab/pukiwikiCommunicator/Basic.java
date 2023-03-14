@@ -312,6 +312,10 @@ public class Basic extends ABasic implements InterpreterInterface
         		return nilSymbol;
         	}
         }
+        else
+        if(eq(proc,recSymbol("geoDistance"))){
+        	return this.getGeoDistance(car(argl),second(argl),third(argl),fourth(argl));
+        }        
         return null;
     }
     public String grep(String page, String key){ // key is a regular expression
@@ -767,6 +771,50 @@ public class Basic extends ABasic implements InterpreterInterface
         LispObject v=arrays.get(rowcol, srindex);
         if(v==null) return nilSymbol;
         return v;
+    }
+    
+    LispObject getGeoDistance(LispObject la1,LispObject lo1,LispObject la2,LispObject lo2){
+       	try{
+       	MyDouble dw=new MyDouble(0.0);
+       	MyDouble da1=(MyDouble)la1;
+       	MyDouble do1=(MyDouble)lo1;
+       	MyDouble da2=(MyDouble)la2;
+       	MyDouble do2=(MyDouble)lo2;
+       	
+       	double vda1=da1.val;
+       	double vdo1=do1.val;
+       	double vda2=da2.val;
+       	double vdo2=do2.val;
+       	
+       	double pole_radius = 6356752.314245; //                 # 極半径
+       	double equator_radius = 6378137.0; //                    # 赤道半径    	
+       	
+       	double da1r=vda1*3.1415926535/180.0;
+       	double do1r=vdo1*3.1415926535/180.0;
+       	double da2r=vda2*3.1415926535/180.0;
+       	double do2r=vdo2*3.1415926535/180.0;
+       	
+           double lat_difference = da1r - da2r; //       # 緯度差
+           double lon_difference = do1r - do2r; //        # 経度差
+           double lat_average = (da1r + da2r) / 2.0; //    # 平均緯度
+
+           double e2 = (Math.pow(equator_radius, 2) - Math.pow(pole_radius, 2)) 
+           	            / Math.pow(equator_radius, 2); //  # 第一離心率^2
+
+           double w = Math.sqrt(1- e2 * Math.pow(Math.sin(lat_average), 2));
+           double m = equator_radius * (1 - e2) / Math.pow(w, 3); // # 子午線曲率半径
+
+           double n = equator_radius / w; //                         # 卯酉線曲半径
+
+           double  distance = Math.sqrt(Math.pow(m * lat_difference, 2) 
+           	                   + Math.pow(n * lon_difference * Math.cos(lat_average), 2)); // # 距離計測
+       	
+       	return new MyDouble(distance);
+       	}
+       	catch(Exception e){
+       		System.out.println("getGeoDistance error:"+e);
+       	}
+       	return nilSymbol;
     }
     
     LispObject countif(String table, String rowcol, 
