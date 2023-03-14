@@ -1,0 +1,93 @@
+command: set readInterval=60000
+command: set execInterval=500
+command: set sendInterval=600000
+command: program ex1
+program: def abs(x)= if x>0 then x else -x
+program: def facemove(x)={ ex("pycon", x) }
+program: def which()=0
+program: dim comTab
+program: ex("service","clear sendBuffer")
+program: output=""
+program: dx="2021/11/29/ 10:"
+program: i=0:   comTab(i,0)=dx+"05:00":comTab(i,1)="face up"   :comTab(i,2)=0
+program: i=i+1: comTab(i,0)=dx+"05:10":comTab(i,1)="face down" :comTab(i,2)=0
+program: i=i+1: comTab(i,0)=dx+"10:15":comTab(i,1)="face up"   :comTab(i,2)=0
+program: i=i+1: comTab(i,0)=dx+"10:20":comTab(i,1)="face left" :comTab(i,2)=0
+program: i=i+1: comTab(i,0)=dx+"11:00":comTab(i,1)="face up"   :comTab(i,2)=0
+program: i=i+1: comTab(i,0)=dx+"11:10":comTab(i,1)="face right":comTab(i,2)=0
+program: i=i+1: comTab(i,0)=dx+"11:15":comTab(i,1)="face up"   :comTab(i,2)=0
+program: i=i+1: comTab(i,0)=dx+"11:20":comTab(i,1)="face down" :comTab(i,2)=0
+program: i=i+1: comTab(i,0)=dx+"12:00":comTab(i,1)="face up"   :comTab(i,2)=0
+program: i=i+1: comTab(i,0)=dx+"12:10":comTab(i,1)="face left" :comTab(i,2)=0
+program: i=i+1: comTab(i,0)=dx+"12:15":comTab(i,1)="face up"   :comTab(i,2)=0
+program: i=i+1: comTab(i,0)=dx+"12:20":comTab(i,1)="face right":comTab(i,2)=0
+program: i=i+1: comTab(i,0)=dx+"13:00":comTab(i,1)="face up"   :comTab(i,2)=0
+program: i=i+1: comTab(i,0)=dx+"13:10":comTab(i,1)="face down" :comTab(i,2)=0
+program: i=i+1: comTab(i,0)=dx+"13:15":comTab(i,1)="face up"   :comTab(i,2)=0
+program: i=i+1: comTab(i,0)=dx+"13:20":comTab(i,1)="face left" :comTab(i,2)=0
+program: i=i+1: comTab(i,0)=dx+"14:25":comTab(i,1)="face up"   :comTab(i,2)=0
+program: i=i+1: comTab(i,0)=dx+"14:30":comTab(i,1)="face right":comTab(i,2)=0
+program: i=i+1: comTab(i,0)=dx+"14:35":comTab(i,1)="face up"   :comTab(i,2)=0
+program: i=i+1: comTab(i,0)=dx+"14:40":comTab(i,1)="face down" :comTab(i,2)=0
+program: i=i+1: comTab(i,0)=dx+"15:00":comTab(i,1)="face up"   :comTab(i,2)=0
+program: i=i+1: comTab(i,0)=dx+"15:10":comTab(i,1)="face right":comTab(i,2)=0
+program: i=i+1: comTab(i,0)=dx+"15:15":comTab(i,1)="face up"   :comTab(i,2)=0
+program: i=i+1: comTab(i,0)=dx+"15:20":comTab(i,1)="face down" :comTab(i,2)=0
+program: i=i+1: comTab(i,0)=dx+"16:00":comTab(i,1)="face up"   :comTab(i,2)=0
+program: i=i+1: comTab(i,0)=dx+"20:10":comTab(i,1)="face left" :comTab(i,2)=0
+program: i=i+1: comTab(i,0)=dx+"20:15":comTab(i,1)="face up"   :comTab(i,2)=0
+program: i=i+1: comTab(i,0)=dx+"25:00":comTab(i,1)="face up"   :comTab(i,2)=0
+program: i=i+1: comTab(i,0)=dx+"25:10":comTab(i,1)="face right":comTab(i,2)=0
+program: i=i+1: comTab(i,0)=dx+"25:15":comTab(i,1)="face up"   :comTab(i,2)=0
+program: i=i+1: comTab(i,0)=dx+"25:20":comTab(i,1)="face down" :comTab(i,2)=0
+program: i=i+1: comTab(i,0)=dx+"25:50":comTab(i,1)="face down" :comTab(i,2)=0
+program: i=i+1: comTab(i,0)=dx+"26:00":comTab(i,1)="face up"   :comTab(i,2)=0
+program: i=i+1: comTab(i,0)=dx+"30:10":comTab(i,1)="face left" :comTab(i,2)=0
+program: i=i+1: comTab(i,0)=dx+"30:15":comTab(i,1)="face up"   :comTab(i,2)=0
+program: i=i+1: comTab(i,0)=dx+"35:00":comTab(i,1)="face up"   :comTab(i,2)=0
+program: i=i+1: comTab(i,0)=dx+"35:10":comTab(i,1)="face right":comTab(i,2)=0
+program: i=i+1: comTab(i,0)=dx+"36:00":comTab(i,1)="face up"   :comTab(i,2)=0
+program: i=i+1: comTab(i,0)=dx+"36:10":comTab(i,1)="face left" :comTab(i,2)=0
+program: i=i+1: comTab(i,0)=dx+"45:00":comTab(i,1)="face up"   :comTab(i,2)=1
+program: i=i+1: comTab(i,0)=dx+"45:10":comTab(i,1)="face right":comTab(i,2)=1
+program: i=i+1: comTab(i,0)=dx+"50:45":comTab(i,1)="face up"   :comTab(i,2)=1
+program: i=i+1: comTab(i,0)=dx+"50:50":comTab(i,1)="face down" :comTab(i,2)=1
+program: i=i+1: comTab(i,0)=dx+"55:00":comTab(i,1)="face up"   :comTab(i,2)=1
+program: i=i+1: comTab(i,0)=dx+"55:10":comTab(i,1)="face left" :comTab(i,2)=1
+program: i=i+1: comTab(i,0)=dx+"00:00":comTab(i,1)="face down" :comTab(i,2)=1
+program: i=i+1: comTab(i,0)=dx+"00:15":comTab(i,1)="face up"   :comTab(i,2)=1
+program: n=i
+program: print "n=",n
+program: '
+program: ' projector operation mode ... "allUp", "allDown", "schedule"
+program: mode="schedule"
+program: '
+program: if mode="allUp" then { facemove("face up"): delay(2000) }
+program: else
+program: if mode="allDown" then {facemove("face down"): delay(2000)}
+program: else
+program: if mode="schedule" then
+program: {
+program:   'for tn=0 to 120
+program:    for i=0 to n
+program:     'w=which()
+program:     w=0
+program:     if w=0 or w=comTab(i,2) then
+program:     'if w=0 then
+program:     {
+program:       t=comTab(i,0):lt=date2l(t)
+program:       ct=ex("service","getCurrentDate."):lct=date2l(ct)
+program:       dt=abs(lt-lct)
+program:       if dt<505 then
+program:       {
+program:          cmd=comTab(i,1)
+program:          facemove(cmd) 
+program:          delay(800)
+program:       }
+program:     }
+program:    next i
+program:    delay(100)
+program:   'next tn
+program: }
+program: 'ex("service","sendResults.")
+command: end ex1

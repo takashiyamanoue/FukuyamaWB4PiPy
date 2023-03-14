@@ -1,0 +1,15 @@
+[Unit]
+Description=teleport dresser service
+Before=teleport_dresser_step02.service
+
+[Service]
+ExecStart=/usr/bin/python3 tcp_server_ex1.py
+WorkingDirectory=/home/pi/workspace/FukuyamaWB4PiPy
+Type=oneshot
+RemainAfterExit=yes
+StandardOutput=inherit
+StandardError=inherit
+User=pi
+
+[Install]
+WantedBy=multi-user.target

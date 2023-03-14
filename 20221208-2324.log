@@ -1,0 +1,579 @@
+witterController TwitterController
+TweetTwitter
+TwitterLoginControllerTwitterLoginController
+ ... complete the GPIO #02 circuit and see the listener feedback here in the console.
+PythonConnector setSetting.
+PythonConnector..parseCommand:connect
+addr=localhost,port=9998
+editUrl=http://www.yama-lab.org/fwb4pi/index.php?LightSensor1
+
+setPageOfTheURL editUrl=http://www.yama-lab.org/fwb4pi/index.php?LightSensor1
+connectButton.actionPerformed, url=http://www.yama-lab.org/fwb4pi/index.php?LightSensor1
+new getMethod(http://www.yama-lab.org/fwb4pi/index.php?LightSensor1)
+l=<?xml
+r=?>
+tag= version="1.0" encoding="UTF-8" 
+key=encoding
+ key?=version
+ key?=encoding
+ keyx=encoding t="UTF-8"
+pageCharSet=UTF-8
+l=<body>
+r=</body>
+l=<div id="header">
+r=</div>
+l=<span class="small">
+r=</span>
+setPageOfTheURL(http://www.yama-lab.org/fwb4pi/index.php?LightSensor1)baseUrl=http://www.yama-lab.org/fwb4pi/index.php
+l=<pre>
+r=</pre>
+setPageOfTheURL editUrl=http://www.yama-lab.org/fwb4pi/index.php?LightSensor1
+connectButton.actionPerformed, url=http://www.yama-lab.org/fwb4pi/index.php?LightSensor1
+new getMethod(http://www.yama-lab.org/fwb4pi/index.php?LightSensor1)
+l=<?xml
+r=?>
+tag= version="1.0" encoding="UTF-8" 
+key=encoding
+ key?=version
+ key?=encoding
+ keyx=encoding t="UTF-8"
+pageCharSet=UTF-8
+l=<body>
+r=</body>
+l=<div id="header">
+r=</div>
+l=<span class="small">
+r=</span>
+setPageOfTheURL(http://www.yama-lab.org/fwb4pi/index.php?LightSensor1)baseUrl=http://www.yama-lab.org/fwb4pi/index.php
+editPageButton.actionPerformed, event=null
+editUrl=http://www.yama-lab.org/fwb4pi/index.php?cmd=edit&page=LightSensor1
+baseUrl=http://www.yama-lab.org/fwb4pi/index.php
+
+http://www.yama-lab.org/fwb4pi/index.php?cmd=edit&page=LightSensor1
+
+connectButton.actionPerformed, url=http://www.yama-lab.org/fwb4pi/index.php?cmd=edit&page=LightSensor1
+new getMethod(http://www.yama-lab.org/fwb4pi/index.php?cmd=edit&page=LightSensor1)
+l=<form
+r=</form>
+form= action="http://www.yama-lab.org/fwb4pi/index.php" method="post" style="margin-bottom:0px;">
+<div><input type="hidden" name="encode_hint" value="ぷ" /></div>
+  <select name="template_page">
+   <option value="">-- 雛形とするページ --</option>
+   <option value="Basic-ex1">Basic-ex1</option>
+   <option value="Basic-ex2">Basic-ex2</option>
+   <option value="Basic-ex3">Basic-ex3</option>
+   <option value="BracketName">BracketName</option>
+   <option value="ForTest1">ForTest1</option>
+   <option value="FormattingRules">FormattingRules</option>
+   <option value="FrontPage">FrontPage</option>
+   <option value="GetTweTerminalID">GetTweTerminalID</option>
+   <option value="Help">Help</option>
+   <option value="I2C-Lx-Ex1">I2C-Lx-Ex1</option>
+   <option value="I2CDetect">I2CDetect</option>
+   <option value="I2c-Lx-Ex2">I2c-Lx-Ex2</option>
+   <option value="I2c-Srb-Ex1">I2c-Srb-Ex1</option>
+   <option value="InterWiki">InterWiki</option>
+   <option value="InterWikiName">InterWikiName</option>
+   <option value="InterWikiSandBox">InterWikiSandBox</option>
+   <option value="LED_and_Button_ex01">LED_and_Button_ex01</option>
+   <option value="LightSensor1">LightSensor1</option>
+   <option value="Menu">Menu</option>
+   <option value="MenuBar">MenuBar</option>
+   <option value="NetDraw">NetDraw</option>
+   <option value="PHP">PHP</option>
+   <option value="PukiWiki">PukiWiki</option>
+   <option value="PukiWiki/1.4">PukiWiki/1.4</option>
+   <option value="PukiWiki/1.4/Manual">PukiWiki/1.4/Manual</option>
+   <option value="PukiWiki/1.4/Manual/Plugin">PukiWiki/1.4/Manual/Plugin</option>
+   <option value="PukiWiki/1.4/Manual/Plugin/A-D">PukiWiki/1.4/Manual/Plugin/A-D</option>
+   <option value="PukiWiki/1.4/Manual/Plugin/E-G">PukiWiki/1.4/Manual/Plugin/E-G</option>
+   <option value="PukiWiki/1.4/Manual/Plugin/H-K">PukiWiki/1.4/Manual/Plugin/H-K</option>
+   <option value="PukiWiki/1.4/Manual/Plugin/L-N">PukiWiki/1.4/Manual/Plugin/L-N</option>
+   <option value="PukiWiki/1.4/Manual/Plugin/O-R">PukiWiki/1.4/Manual/Plugin/O-R</option>
+   <option value="PukiWiki/1.4/Manual/Plugin/S-U">PukiWiki/1.4/Manual/Plugin/S-U</option>
+   <option value="PukiWiki/1.4/Manual/Plugin/V-Z">PukiWiki/1.4/Manual/Plugin/V-Z</option>
+   <option value="RecentDeleted">RecentDeleted</option>
+   <option value="SandBox">SandBox</option>
+   <option value="Sensors2">Sensors2</option>
+   <option value="Sensors3">Sensors3</option>
+   <option value="SerialEx1">SerialEx1</option>
+   <option value="SerialEx2">SerialEx2</option>
+   <option value="ServerMonitorEx1">ServerMonitorEx1</option>
+   <option value="Servo1">Servo1</option>
+   <option value="Servo2">Servo2</option>
+   <option value="WikiEngines">WikiEngines</option>
+   <option value="WikiName">WikiName</option>
+   <option value="WikiWikiWeb">WikiWikiWeb</option>
+   <option value="YukiWiki">YukiWiki</option>
+   <option value="basic">basic</option>
+   <option value="ex0">ex0</option>
+   <option value="ex1">ex1</option>
+   <option value="ex2">ex2</option>
+   <option value="ex3">ex3</option>
+   <option value="ex4">ex4</option>
+   <option value="getTweChanged">getTweChanged</option>
+   <option value="i2c-ADS1115-ex1">i2c-ADS1115-ex1</option>
+   <option value="i2c-hdc1080-1">i2c-hdc1080-1</option>
+   <option value="i2c-hdc1080-2">i2c-hdc1080-2</option>
+   <option value="i2c-mpl3115a2-ex1">i2c-mpl3115a2-ex1</option>
+   <option value="i2c-opt3001-1">i2c-opt3001-1</option>
+   <option value="i2c-opt3001-ex1">i2c-opt3001-ex1</option>
+   <option value="i2c-sensors-ex2">i2c-sensors-ex2</option>
+   <option value="i2c-sensors-ex3">i2c-sensors-ex3</option>
+   <option value="i2c-sensors-ex3-w1">i2c-sensors-ex3-w1</option>
+   <option value="i2c-sensors-ex4">i2c-sensors-ex4</option>
+   <option value="i2c-sensors-ex5">i2c-sensors-ex5</option>
+   <option value="i2c-veml6075">i2c-veml6075</option>
+   <option value="ladyMadonna">ladyMadonna</option>
+   <option value="music">music</option>
+   <option value="musicTest">musicTest</option>
+   <option value="musicTest0">musicTest0</option>
+   <option value="pen">pen</option>
+   <option value="pen-ex1">pen-ex1</option>
+   <option value="sensors-1-class-2">sensors-1-class-2</option>
+   <option value="sensors-1-d-16.html">sensors-1-d-16.html</option>
+   <option value="sensors-1-d-class">sensors-1-d-class</option>
+   <option value="sensors-1-h-0">sensors-1-h-0</option>
+   <option value="sensors-1-h-1">sensors-1-h-1</option>
+   <option value="sensors-1-h-10">sensors-1-h-10</option>
+   <option value="sensors-1-h-11">sensors-1-h-11</option>
+   <option value="sensors-1-h-12">sensors-1-h-12</option>
+   <option value="sensors-1-h-13">sensors-1-h-13</option>
+   <option value="sensors-1-h-14">sensors-1-h-14</option>
+   <option value="sensors-1-h-15">sensors-1-h-15</option>
+   <option value="sensors-1-h-16">sensors-1-h-16</option>
+   <option value="sensors-1-h-17">sensors-1-h-17</option>
+   <option value="sensors-1-h-18">sensors-1-h-18</option>
+   <option value="sensors-1-h-19">sensors-1-h-19</option>
+   <option value="sensors-1-h-2">sensors-1-h-2</option>
+   <option value="sensors-1-h-20">sensors-1-h-20</option>
+   <option value="sensors-1-h-21">sensors-1-h-21</option>
+   <option value="sensors-1-h-22">sensors-1-h-22</option>
+   <option value="sensors-1-h-23">sensors-1-h-23</option>
+   <option value="sensors-1-h-3">sensors-1-h-3</option>
+   <option value="sensors-1-h-4">sensors-1-h-4</option>
+   <option value="sensors-1-h-5">sensors-1-h-5</option>
+   <option value="sensors-1-h-6">sensors-1-h-6</option>
+   <option value="sensors-1-h-7">sensors-1-h-7</option>
+   <option value="sensors-1-h-8">sensors-1-h-8</option>
+   <option value="sensors-1-h-9">sensors-1-h-9</option>
+   <option value="sensors-class-1">sensors-class-1</option>
+   <option value="sensors-h-2">sensors-h-2</option>
+   <option value="simple example">simple example</option>
+   <option value="tDressBot_ex1">tDressBot_ex1</option>
+   <option value="tDressBot_ex2">tDressBot_ex2</option>
+  </select>
+  <input type="submit" name="template" value="読込" accesskey="r" />
+  <br />
+  
+  <input type="hidden" name="cmd"    value="edit" />
+  <input type="hidden" name="page"   value="LightSensor1" />
+  <input type="hidden" name="digest" value="a32a9f72e3c1a554cec7a0a6040aca1c" />
+  <textarea name="msg" rows="20" cols="80">[[FrontPage]]
+ objectPage http://www.yama-lab.org/fwb4pi/index.php?LightSensor1 or http://www.yama-lab.org/fwb4pi/index.php?LightSensor1
+ device yamaRasPiDp9_1 or yamaRasPiDp9_2 start after no write for 10 min.
+ command: set readInterval=15000
+ command: set execInterval=0
+ command: program i2cLightSensor
+ program: '
+ program: ' init i2c
+ program: ex(&quot;pi4j&quot;, &quot;i2c use 1&quot;)
+ program: '
+ program: ' init lux sensor 
+ program: ex(&quot;pi4j&quot;, &quot;i2c write1 0x29,0x80,0x03&quot;) 'power up the tsl2561 lux sensor
+ program: ex(&quot;pi4j&quot;, &quot;i2c write1 0x29,0x81,0x00&quot;)
+ program: ex(&quot;pi4j&quot;, &quot;i2c write1 0x29,0x86,0x00&quot;) 'scale
+ program: ex(&quot;pi4j&quot;, &quot;i2c write1 0x29,0x80,0x00&quot;) 'power down
+ program: ex(&quot;pi4j&quot;, &quot;i2c write1 0x29,0x80,0x03&quot;) ' power up again
+ program: delay(50)
+ program: '
+ program: 'get the lux value
+ program: v1=ex(&quot;pi4j&quot;, &quot;i2c read1 0x29,0x8c&quot;)
+ program: v2=ex(&quot;pi4j&quot;, &quot;i2c read1 0x29,0x8d&quot;)
+ program: v=s2i(v2)*256+s2i(v1)
+ program: '
+ program: ex(&quot;pi4j&quot;, &quot;i2c close.&quot;)
+ program: ex(&quot;service&quot;,&quot;clear sendBuffer&quot;)
+ program: ex(&quot;service&quot;,&quot;putSendBuffer device=light, Date=&quot;+ex(&quot;service&quot;,&quot;getCurrentDate.&quot;)+&quot;, v=&quot;+v);
+ program: ex(&quot;service&quot;,&quot;sendResults.&quot;)
+ command: end i2cLightSensor
+ command: run i2cLightSensor
+ result:
+ device=light, Date=2022/12/8/ 23:22:25, v=0
+ currentDevice=&quot;yamaRasPiDp1_1&quot;,Date=2022/12/8/ 23:22:25
+</textarea>
+  <br />
+  <div style="float:left;">
+   <input type="submit" name="preview" value="プレビュー" accesskey="p" />
+   <input type="submit" name="write"   value="ページの更新" accesskey="s" />
+   
+   <input type="checkbox" name="notimestamp" id="_edit_form_notimestamp" value="true" />
+   <label for="_edit_form_notimestamp"><span class="small">タイムスタンプを変更しない</span></label>
+&nbsp;
+  </div>
+  <textarea name="original" rows="1" cols="1" style="display:none">[[FrontPage]]
+ objectPage http://www.yama-lab.org/fwb4pi/index.php?LightSensor1 or http://www.yama-lab.org/fwb4pi/index.php?LightSensor1
+ device yamaRasPiDp9_1 or yamaRasPiDp9_2 start after no write for 10 min.
+ command: set readInterval=15000
+ command: set execInterval=0
+ command: program i2cLightSensor
+ program: '
+ program: ' init i2c
+ program: ex(&quot;pi4j&quot;, &quot;i2c use 1&quot;)
+ program: '
+ program: ' init lux sensor 
+ program: ex(&quot;pi4j&quot;, &quot;i2c write1 0x29,0x80,0x03&quot;) 'power up the tsl2561 lux sensor
+ program: ex(&quot;pi4j&quot;, &quot;i2c write1 0x29,0x81,0x00&quot;)
+ program: ex(&quot;pi4j&quot;, &quot;i2c write1 0x29,0x86,0x00&quot;) 'scale
+ program: ex(&quot;pi4j&quot;, &quot;i2c write1 0x29,0x80,0x00&quot;) 'power down
+ program: ex(&quot;pi4j&quot;, &quot;i2c write1 0x29,0x80,0x03&quot;) ' power up again
+ program: delay(50)
+ program: '
+ program: 'get the lux value
+ program: v1=ex(&quot;pi4j&quot;, &quot;i2c read1 0x29,0x8c&quot;)
+ program: v2=ex(&quot;pi4j&quot;, &quot;i2c read1 0x29,0x8d&quot;)
+ program: v=s2i(v2)*256+s2i(v1)
+ program: '
+ program: ex(&quot;pi4j&quot;, &quot;i2c close.&quot;)
+ program: ex(&quot;service&quot;,&quot;clear sendBuffer&quot;)
+ program: ex(&quot;service&quot;,&quot;putSendBuffer device=light, Date=&quot;+ex(&quot;service&quot;,&quot;getCurrentDate.&quot;)+&quot;, v=&quot;+v);
+ program: ex(&quot;service&quot;,&quot;sendResults.&quot;)
+ command: end i2cLightSensor
+ command: run i2cLightSensor
+ result:
+ device=light, Date=2022/12/8/ 23:22:25, v=0
+ currentDevice=&quot;yamaRasPiDp1_1&quot;,Date=2022/12/8/ 23:22:25
+</textarea>
+ 
+z=[[FrontPage]]
+ objectPage http://www.yama-lab.org/fwb4pi/index.php?LightSensor1 or http://www.yama-lab.org/fwb4pi/index.php?LightSensor1
+ device yamaRasPiDp9_1 or yamaRasPiDp9_2 start after no write for 10 min.
+ command: set readInterval=15000
+ command: set execInterval=0
+ command: program i2cLightSensor
+ program: '
+ program: ' init i2c
+ program: ex(&quot;pi4j&quot;, &quot;i2c use 1&quot;)
+ program: '
+ program: ' init lux sensor 
+ program: ex(&quot;pi4j&quot;, &quot;i2c write1 0x29,0x80,0x03&quot;) 'power up the tsl2561 lux sensor
+ program: ex(&quot;pi4j&quot;, &quot;i2c write1 0x29,0x81,0x00&quot;)
+ program: ex(&quot;pi4j&quot;, &quot;i2c write1 0x29,0x86,0x00&quot;) 'scale
+ program: ex(&quot;pi4j&quot;, &quot;i2c write1 0x29,0x80,0x00&quot;) 'power down
+ program: ex(&quot;pi4j&quot;, &quot;i2c write1 0x29,0x80,0x03&quot;) ' power up again
+ program: delay(50)
+ program: '
+ program: 'get the lux value
+ program: v1=ex(&quot;pi4j&quot;, &quot;i2c read1 0x29,0x8c&quot;)
+ program: v2=ex(&quot;pi4j&quot;, &quot;i2c read1 0x29,0x8d&quot;)
+ program: v=s2i(v2)*256+s2i(v1)
+ program: '
+ program: ex(&quot;pi4j&quot;, &quot;i2c close.&quot;)
+ program: ex(&quot;service&quot;,&quot;clear sendBuffer&quot;)
+ program: ex(&quot;service&quot;,&quot;putSendBuffer device=light, Date=&quot;+ex(&quot;service&quot;,&quot;getCurrentDate.&quot;)+&quot;, v=&quot;+v);
+ program: ex(&quot;service&quot;,&quot;sendResults.&quot;)
+ command: end i2cLightSensor
+ command: run i2cLightSensor
+ result:
+ device=light, Date=2022/12/8/ 23:22:25, v=0
+ currentDevice=&quot;yamaRasPiDp1_1&quot;,Date=2022/12/8/ 23:22:25
+</textarea>
+  <br />
+  <div style="float:left;">
+   <input type="submit" name="preview" value="プレビュー" accesskey="p" />
+   <input type="submit" name="write"   value="ページの更新" accesskey="s" />
+   
+   <input type="checkbox" name="notimestamp" id="_edit_form_notimestamp" value="true" />
+   <label for="_edit_form_notimestamp"><span class="small">タイムスタンプを変更しない</span></label>
+&nbsp;
+  </div>
+  <textarea name="original" rows="1" cols="1" style="display:none">[[FrontPage]]
+ objectPage http://www.yama-lab.org/fwb4pi/index.php?LightSensor1 or http://www.yama-lab.org/fwb4pi/index.php?LightSensor1
+ device yamaRasPiDp9_1 or yamaRasPiDp9_2 start after no write for 10 min.
+ command: set readInterval=15000
+ command: set execInterval=0
+ command: program i2cLightSensor
+ program: '
+ program: ' init i2c
+ program: ex(&quot;pi4j&quot;, &quot;i2c use 1&quot;)
+ program: '
+ program: ' init lux sensor 
+ program: ex(&quot;pi4j&quot;, &quot;i2c write1 0x29,0x80,0x03&quot;) 'power up the tsl2561 lux sensor
+ program: ex(&quot;pi4j&quot;, &quot;i2c write1 0x29,0x81,0x00&quot;)
+ program: ex(&quot;pi4j&quot;, &quot;i2c write1 0x29,0x86,0x00&quot;) 'scale
+ program: ex(&quot;pi4j&quot;, &quot;i2c write1 0x29,0x80,0x00&quot;) 'power down
+ program: ex(&quot;pi4j&quot;, &quot;i2c write1 0x29,0x80,0x03&quot;) ' power up again
+ program: delay(50)
+ program: '
+ program: 'get the lux value
+ program: v1=ex(&quot;pi4j&quot;, &quot;i2c read1 0x29,0x8c&quot;)
+ program: v2=ex(&quot;pi4j&quot;, &quot;i2c read1 0x29,0x8d&quot;)
+ program: v=s2i(v2)*256+s2i(v1)
+ program: '
+ program: ex(&quot;pi4j&quot;, &quot;i2c close.&quot;)
+ program: ex(&quot;service&quot;,&quot;clear sendBuffer&quot;)
+ program: ex(&quot;service&quot;,&quot;putSendBuffer device=light, Date=&quot;+ex(&quot;service&quot;,&quot;getCurrentDate.&quot;)+&quot;, v=&quot;+v);
+ program: ex(&quot;service&quot;,&quot;sendResults.&quot;)
+ command: end i2cLightSensor
+ command: run i2cLightSensor
+ result:
+ device=light, Date=2022/12/8/ 23:22:25, v=0
+ currentDevice=&quot;yamaRasPiDp1_1&quot;,Date=2022/12/8/ 23:22:25
+</textarea>
+ 
+j=1480 k=1487
+dataStart=result:
+ device=light, Date=2022/12/8/ 23:22:25, v=0
+ currentDevice=&quot;yamaRasPiDp1_1&quot;,Date=2022/12/8/ 23:22:25
+</textarea>
+  <br />
+  <div style="float:left;">
+   <input type="submit" name="preview" value="プレビュー" accesskey="p" />
+   <input type="submit" name="write"   value="ページの更新" accesskey="s" />
+   
+   <input type="checkbox" name="notimestamp" id="_edit_form_notimestamp" value="true" />
+   <label for="_edit_form_notimestamp"><span class="small">タイムスタンプを変更しない</span></label>
+&nbsp;
+  </div>
+  <textarea name="original" rows="1" cols="1" style="display:none">[[FrontPage]]
+ objectPage http://www.yama-lab.org/fwb4pi/index.php?LightSensor1 or http://www.yama-lab.org/fwb4pi/index.php?LightSensor1
+ device yamaRasPiDp9_1 or yamaRasPiDp9_2 start after no write for 10 min.
+ command: set readInterval=15000
+ command: set execInterval=0
+ command: program i2cLightSensor
+ program: '
+ program: ' init i2c
+ program: ex(&quot;pi4j&quot;, &quot;i2c use 1&quot;)
+ program: '
+ program: ' init lux sensor 
+ program: ex(&quot;pi4j&quot;, &quot;i2c write1 0x29,0x80,0x03&quot;) 'power up the tsl2561 lux sensor
+ program: ex(&quot;pi4j&quot;, &quot;i2c write1 0x29,0x81,0x00&quot;)
+ program: ex(&quot;pi4j&quot;, &quot;i2c write1 0x29,0x86,0x00&quot;) 'scale
+ program: ex(&quot;pi4j&quot;, &quot;i2c write1 0x29,0x80,0x00&quot;) 'power down
+ program: ex(&quot;pi4j&quot;, &quot;i2c write1 0x29,0x80,0x03&quot;) ' power up again
+ program: delay(50)
+ program: '
+ program: 'get the lux value
+ program: v1=ex(&quot;pi4j&quot;, &quot;i2c read1 0x29,0x8c&quot;)
+ program: v2=ex(&quot;pi4j&quot;, &quot;i2c read1 0x29,0x8d&quot;)
+ program: v=s2i(v2)*256+s2i(v1)
+ program: '
+ program: ex(&quot;pi4j&quot;, &quot;i2c close.&quot;)
+ program: ex(&quot;service&quot;,&quot;clear sendBuffer&quot;)
+ program: ex(&quot;service&quot;,&quot;putSendBuffer device=light, Date=&quot;+ex(&quot;service&quot;,&quot;getCurrentDate.&quot;)+&quot;, v=&quot;+v);
+ program: ex(&quot;service&quot;,&quot;sendResults.&quot;)
+ command: end i2cLightSensor
+ command: run i2cLightSensor
+ result:
+ device=light, Date=2022/12/8/ 23:22:25, v=0
+ currentDevice=&quot;yamaRasPiDp1_1&quot;,Date=2022/12/8/ 23:22:25
+</textarea>
+ 
+j=1480 k=1487
+head=[[FrontPage]]
+ objectPage http://www.yama-lab.org/fwb4pi/index.php?LightSensor1 or http://www.yama-lab.org/fwb4pi/index.php?LightSensor1
+ device yamaRasPiDp9_1 or yamaRasPiDp9_2 start after no write for 10 min.
+ command: set readInterval=15000
+ command: set execInterval=0
+ command: program i2cLightSensor
+ program: '
+ program: ' init i2c
+ program: ex(&quot;pi4j&quot;, &quot;i2c use 1&quot;)
+ program: '
+ program: ' init lux sensor 
+ program: ex(&quot;pi4j&quot;, &quot;i2c write1 0x29,0x80,0x03&quot;) 'power up the tsl2561 lux sensor
+ program: ex(&quot;pi4j&quot;, &quot;i2c write1 0x29,0x81,0x00&quot;)
+ program: ex(&quot;pi4j&quot;, &quot;i2c write1 0x29,0x86,0x00&quot;) 'scale
+ program: ex(&quot;pi4j&quot;, &quot;i2c write1 0x29,0x80,0x00&quot;) 'power down
+ program: ex(&quot;pi4j&quot;, &quot;i2c write1 0x29,0x80,0x03&quot;) ' power up again
+ program: delay(50)
+ program: '
+ program: 'get the lux value
+ program: v1=ex(&quot;pi4j&quot;, &quot;i2c read1 0x29,0x8c&quot;)
+ program: v2=ex(&quot;pi4j&quot;, &quot;i2c read1 0x29,0x8d&quot;)
+ program: v=s2i(v2)*256+s2i(v1)
+ program: '
+ program: ex(&quot;pi4j&quot;, &quot;i2c close.&quot;)
+ program: ex(&quot;service&quot;,&quot;clear sendBuffer&quot;)
+ program: ex(&quot;service&quot;,&quot;putSendBuffer device=light, Date=&quot;+ex(&quot;service&quot;,&quot;getCurrentDate.&quot;)+&quot;, v=&quot;+v);
+ program: ex(&quot;service&quot;,&quot;sendResults.&quot;)
+ command: end i2cLightSensor
+ command: run i2cLightSensor
+ result:
+body=
+ device=light, Date=2022/12/8/ 23:22:25, v=0
+ currentDevice=&quot;yamaRasPiDp1_1&quot;,Date=2022/12/8/ 23:22:25
+tail=</textarea>
+  <br />
+  <div style="float:left;">
+   <input type="submit" name="preview" value="プレビュー" accesskey="p" />
+   <input type="submit" name="write"   value="ページの更新" accesskey="s" />
+   
+   <input type="checkbox" name="notimestamp" id="_edit_form_notimestamp" value="true" />
+   <label for="_edit_form_notimestamp"><span class="small">タイムスタンプを変更しない</span></label>
+&nbsp;
+  </div>
+  <textarea name="original" rows="1" cols="1" style="display:none">[[FrontPage]]
+ objectPage http://www.yama-lab.org/fwb4pi/index.php?LightSensor1 or http://www.yama-lab.org/fwb4pi/index.php?LightSensor1
+ device yamaRasPiDp9_1 or yamaRasPiDp9_2 start after no write for 10 min.
+ command: set readInterval=15000
+ command: set execInterval=0
+ command: program i2cLightSensor
+ program: '
+ program: ' init i2c
+ program: ex(&quot;pi4j&quot;, &quot;i2c use 1&quot;)
+ program: '
+ program: ' init lux sensor 
+ program: ex(&quot;pi4j&quot;, &quot;i2c write1 0x29,0x80,0x03&quot;) 'power up the tsl2561 lux sensor
+ program: ex(&quot;pi4j&quot;, &quot;i2c write1 0x29,0x81,0x00&quot;)
+ program: ex(&quot;pi4j&quot;, &quot;i2c write1 0x29,0x86,0x00&quot;) 'scale
+ program: ex(&quot;pi4j&quot;, &quot;i2c write1 0x29,0x80,0x00&quot;) 'power down
+ program: ex(&quot;pi4j&quot;, &quot;i2c write1 0x29,0x80,0x03&quot;) ' power up again
+ program: delay(50)
+ program: '
+ program: 'get the lux value
+ program: v1=ex(&quot;pi4j&quot;, &quot;i2c read1 0x29,0x8c&quot;)
+ program: v2=ex(&quot;pi4j&quot;, &quot;i2c read1 0x29,0x8d&quot;)
+ program: v=s2i(v2)*256+s2i(v1)
+ program: '
+ program: ex(&quot;pi4j&quot;, &quot;i2c close.&quot;)
+ program: ex(&quot;service&quot;,&quot;clear sendBuffer&quot;)
+ program: ex(&quot;service&quot;,&quot;putSendBuffer device=light, Date=&quot;+ex(&quot;service&quot;,&quot;getCurrentDate.&quot;)+&quot;, v=&quot;+v);
+ program: ex(&quot;service&quot;,&quot;sendResults.&quot;)
+ command: end i2cLightSensor
+ command: run i2cLightSensor
+ result:
+ device=light, Date=2022/12/8/ 23:22:25, v=0
+ currentDevice=&quot;yamaRasPiDp1_1&quot;,Date=2022/12/8/ 23:22:25
+</textarea>
+ 
+actionwork1= action="http://www.yama-lab.org/fwb4pi/index.php" method="post" style="margin-bottom:0px;"
+actionwork1= action="http://www.yama-lab.org/fwb4pi/index.php" method="post" style="margin-bottom:0px;"
+tag= action="http://www.yama-lab.org/fwb4pi/index.php" method="post" style="margin-bottom:0px;"
+key=action
+ key?=action
+ keyx=action t="http://www.yama-lab.org/fwb4pi/index.php"
+action url=http://www.yama-lab.org/fwb4pi/index.php
+action url=http://www.yama-lab.org/fwb4pi/index.php
+tag=<input type="hidden" name="encode_hint" value="ぷ" />
+key=type
+ key?=type
+ keyx=type t="hidden"
+tag=<input type="hidden" name="encode_hint" value="ぷ" />
+key=name
+ key?=type
+ key?=name
+ keyx=name t="encode_hint"
+tag=<input type="hidden" name="encode_hint" value="ぷ" />
+key=value
+ key?=type
+ key?=name
+ key?=value
+ keyx=value t="ぷ"
+ encode_hint=ぷ
+tag=<input type="submit" name="template" value="読込" accesskey="r" />
+key=type
+ key?=type
+ keyx=type t="submit"
+tag=<input type="submit" name="template" value="読込" accesskey="r" />
+key=name
+ key?=type
+ key?=name
+ keyx=name t="template"
+tag=<input type="submit" name="template" value="読込" accesskey="r" />
+key=value
+ key?=type
+ key?=name
+ key?=value
+ keyx=value t="読込"
+ template=読込
+tag=<input type="hidden" name="cmd"    value="edit" />
+key=type
+ key?=type
+ keyx=type t="hidden"
+tag=<input type="hidden" name="cmd"    value="edit" />
+key=name
+ key?=type
+ key?=name
+ keyx=name t="cmd"
+tag=<input type="hidden" name="cmd"    value="edit" />
+key=value
+ key?=type
+ key?=name
+ key?=value
+ keyx=value t="edit"
+ cmd=edit
+tag=<input type="hidden" name="page"   value="LightSensor1" />
+key=type
+ key?=type
+ keyx=type t="hidden"
+tag=<input type="hidden" name="page"   value="LightSensor1" />
+key=name
+ key?=type
+ key?=name
+ keyx=name t="page"
+tag=<input type="hidden" name="page"   value="LightSensor1" />
+key=value
+ key?=type
+ key?=name
+ key?=value
+ keyx=value t="LightSensor1"
+ page=LightSensor1
+tag=<input type="hidden" name="digest" value="a32a9f72e3c1a554cec7a0a6040aca1c" />
+key=type
+ key?=type
+ keyx=type t="hidden"
+tag=<input type="hidden" name="digest" value="a32a9f72e3c1a554cec7a0a6040aca1c" />
+key=name
+ key?=type
+ key?=name
+ keyx=name t="digest"
+tag=<input type="hidden" name="digest" value="a32a9f72e3c1a554cec7a0a6040aca1c" />
+key=value
+ key?=type
+ key?=name
+ key?=value
+ keyx=value t="a32a9f72e3c1a554cec7a0a6040aca1c"
+ digest=a32a9f72e3c1a554cec7a0a6040aca1c
+tag=<input type="submit" name="preview" value="プレビュー" accesskey="p" />
+key=type
+ key?=type
+ keyx=type t="submit"
+tag=<input type="submit" name="preview" value="プレビュー" accesskey="p" />
+key=name
+ key?=type
+ key?=name
+ keyx=name t="preview"
+tag=<input type="submit" name="preview" value="プレビュー" accesskey="p" />
+key=value
+ key?=type
+ key?=name
+ key?=value
+ keyx=value t="プレビュー"
+ preview=プレビュー
+tag=<input type="submit" name="write"   value="ページの更新" accesskey="s" />
+key=type
+ key?=type
+ keyx=type t="submit"
+tag=<input type="submit" name="write"   value="ページの更新" accesskey="s" />
+key=name
+ key?=type
+ key?=name
+ keyx=name t="write"
+tag=<input type="submit" name="write"   value="ページの更新" accesskey="s" />
+key=value
+ key?=type
+ key?=name
+ key?=value
+ keyx=value t="ページの更新"
+ write=ページの更新
+tag=<input type="checkbox" name="notimestamp" id="_edit_form_notimestamp" value="true" />
+key=type
+ key?=type
+ keyx=type t="checkbox"
+url=http://www.yama-lab.org/fwb4pi/index.php
+editWriteValue=ページの更新
+editCmd=edit
+editPage=LightSensor1
+digest=a32a9f72e3c1a554cec7a0a6040aca1c
+Method failed: HTTP/1.1 302 Found

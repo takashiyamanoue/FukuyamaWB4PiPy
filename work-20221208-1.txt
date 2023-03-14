@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+ <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+ <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+ <title>FrontPage - PukiWiki</title>
+
+ <link rel="SHORTCUT ICON" href="" />
+ <link rel="stylesheet" type="text/css" href="skin/pukiwiki.css" />
+ <link rel="alternate" type="application/rss+xml" title="RSS" href="./?cmd=rss" /> <script type="text/javascript" src="skin/main.js" defer></script>
+ <script type="text/javascript" src="skin/search2.js" defer></script>
+
+</head>
+<body>
+<div id="pukiwiki-site-properties" style="display:none;">
+<input type="hidden" class="site-props" value="{&quot;is_utf8&quot;:true,&quot;json_enabled&quot;:true,&quot;show_passage&quot;:true,&quot;base_uri_pathname&quot;:&quot;/pukiwiki/&quot;,&quot;base_uri_absolute&quot;:&quot;http://192.168.13.24/pukiwiki/&quot;}" />
+<input type="hidden" class="plugin-name" value="read" />
+<input type="hidden" class="page-name" value="FrontPage" />
+<input type="hidden" class="page-in-edit" value="false" />
+<input type="hidden" class="ticketlink-def" value="[]" />
+
+
+
+<input type="hidden" class="topicpath-links" value="[]" />
+</div><div id="header">
+ <a href="./"><img id="logo" src="image/pukiwiki.png" width="80" height="80" alt="[PukiWiki]" title="[PukiWiki]" /></a>
+
+ <h1 class="title"><a href="./?plugin=related&amp;page=FrontPage">FrontPage</a> </h1>
+
+    <a href="http://192.168.13.24/pukiwiki/"><span class="small">http://192.168.13.24/pukiwiki/</span></a>
+ 
+</div>
+
+<div id="navigator">
+ [ <a href="./" >トップ</a> ] &nbsp;
+
+ [
+ 	<a href="./?cmd=edit&amp;page=FrontPage" >編集</a> |
+			<a href="./?cmd=freeze&amp;page=FrontPage" >凍結</a> |
+	  <a href="./?cmd=diff&amp;page=FrontPage" >差分</a> 	| <a href="./?cmd=backup&amp;page=FrontPage" >履歴</a>  	| <a href="./?plugin=attach&amp;pcmd=upload&amp;page=FrontPage" >添付</a>  | <a href="./" >リロード</a> ] &nbsp;
+
+ [
+ 	<a href="./?plugin=newpage&amp;refer=FrontPage" >新規</a> |
+    <a href="./?cmd=list" >一覧</a>  | <a href="./?cmd=search" >検索</a> | <a href="./?RecentChanges" >最終更新</a> | <a href="./?Help" >ヘルプ</a>   ]
+</div>
+
+<hr class="full_hr" />
+<div id="contents">
+ <div id="body">
+<pre>objectPage http://www.yama-lab.org/fwb4pi/index.php?LightSensor1 or http://www.yama-lab.org/fwb4pi/index.php?LightSensor1
+device yamaRasPiDp9_1 or yamaRasPiDp9_2 start after no write for 10 min.
+command: set readInterval=15000
+command: set execInterval=0
+command: program i2cLightSensor
+program: '
+program: ' init i2c
+program: ex(&quot;pi4j&quot;, &quot;i2c use 1&quot;)
+program: '
+program: ' init lux sensor 
+program: ex(&quot;pi4j&quot;, &quot;i2c write1 0x29,0x80,0x03&quot;) 'power up the tsl2561 lux sensor
+program: ex(&quot;pi4j&quot;, &quot;i2c write1 0x29,0x81,0x00&quot;)
+program: ex(&quot;pi4j&quot;, &quot;i2c write1 0x29,0x86,0x00&quot;) 'scale
+program: ex(&quot;pi4j&quot;, &quot;i2c write1 0x29,0x80,0x00&quot;) 'power down
+program: ex(&quot;pi4j&quot;, &quot;i2c write1 0x29,0x80,0x03&quot;) ' power up again
+program: delay(50)
+program: '
+program: 'get the lux value
+program: v1=ex(&quot;pi4j&quot;, &quot;i2c read1 0x29,0x8c&quot;)
+program: v2=ex(&quot;pi4j&quot;, &quot;i2c read1 0x29,0x8d&quot;)
+program: v=s2i(v2)*256+s2i(v1)
+program: '
+program: ex(&quot;pi4j&quot;, &quot;i2c close.&quot;)
+program: ex(&quot;service&quot;,&quot;clear sendBuffer&quot;)
+program: ex(&quot;service&quot;,&quot;putSendBuffer device=light, Date=&quot;+ex(&quot;service&quot;,&quot;getCurrentDate.&quot;)+&quot;, v=&quot;+v);
+program: ex(&quot;service&quot;,&quot;sendResults.&quot;)
+command: end i2cLightSensor
+command: run i2cLightSensor
+result:
+device=light, Date=2022/12/7/ 10:7:0, v=15
+currentDevice=&quot;yamaRasPiDp1_1&quot;,Date=2022/12/7/ 10:7:0</pre>
+</div>
+ <div id="menubar"><h5>最新の20件</h5>
+<div><strong>2022-12-08</strong>
+<ul class="recent_list">
+ <li>FrontPage</li>
+ <li><a href="./?AutoTicketLinkName" class="link_page_passage" data-mtime="2022-12-08T02:10:03+01:00">AutoTicketLinkName</a></li>
+ <li><a href="./?PukiWiki/1.4/Manual" class="link_page_passage" data-mtime="2022-12-08T02:08:26+01:00">PukiWiki/1.4/Manual</a></li>
+ <li><a href="./?PukiWiki/1.4/Manual/Plugin/S-U" class="link_page_passage" data-mtime="2022-12-08T02:08:26+01:00">PukiWiki/1.4/Manual/Plugin/S-U</a></li>
+ <li><a href="./?PukiWiki/1.4/Manual/Plugin/L-N" class="link_page_passage" data-mtime="2022-12-08T02:08:26+01:00">PukiWiki/1.4/Manual/Plugin/L-N</a></li>
+ <li><a href="./?PukiWiki/1.4/Manual/Plugin/H-K" class="link_page_passage" data-mtime="2022-12-08T02:08:26+01:00">PukiWiki/1.4/Manual/Plugin/H-K</a></li>
+ <li><a href="./?PukiWiki/1.4/Manual/Plugin/A-D" class="link_page_passage" data-mtime="2022-12-08T02:08:26+01:00">PukiWiki/1.4/Manual/Plugin/A-D</a></li>
+ <li><a href="./?BracketName" class="link_page_passage" data-mtime="2022-12-08T02:08:26+01:00">BracketName</a></li>
+ <li><a href="./?PukiWiki/1.4/Manual/Plugin" class="link_page_passage" data-mtime="2022-12-08T02:08:26+01:00">PukiWiki/1.4/Manual/Plugin</a></li>
+ <li><a href="./?PHP" class="link_page_passage" data-mtime="2022-12-08T02:08:26+01:00">PHP</a></li>
+ <li><a href="./?InterWikiName" class="link_page_passage" data-mtime="2022-12-08T02:08:26+01:00">InterWikiName</a></li>
+ <li><a href="./?FormattingRules" class="link_page_passage" data-mtime="2022-12-08T02:08:26+01:00">FormattingRules</a></li>
+ <li><a href="./?Help" class="link_page_passage" data-mtime="2022-12-08T02:08:26+01:00">Help</a></li>
+ <li><a href="./?InterWikiSandBox" class="link_page_passage" data-mtime="2022-12-08T02:08:26+01:00">InterWikiSandBox</a></li>
+ <li><a href="./?MenuBar" class="link_page_passage" data-mtime="2022-12-08T02:08:25+01:00">MenuBar</a></li>
+ <li><a href="./?PukiWiki/1.4/Manual/Plugin/E-G" class="link_page_passage" data-mtime="2022-12-08T02:08:25+01:00">PukiWiki/1.4/Manual/Plugin/E-G</a></li>
+ <li><a href="./?InterWiki" class="link_page_passage" data-mtime="2022-12-08T02:08:25+01:00">InterWiki</a></li>
+ <li><a href="./?PukiWiki" class="link_page_passage" data-mtime="2022-12-08T02:08:25+01:00">PukiWiki</a></li>
+ <li><a href="./?PukiWiki/1.4/Manual/Plugin/O-R" class="link_page_passage" data-mtime="2022-12-08T02:08:25+01:00">PukiWiki/1.4/Manual/Plugin/O-R</a></li>
+ <li><a href="./?PukiWiki/1.4" class="link_page_passage" data-mtime="2022-12-08T02:08:25+01:00">PukiWiki/1.4</a></li>
+</ul>
+</div>
+</div>
+</div>
+
+
+
+<hr class="full_hr" />
+<!-- Toolbar -->
+<div id="toolbar">
+ <a href="./"><img src="image/top.png" width="20" height="20" alt="トップ" title="トップ" /></a>
+ &nbsp;
+ 	<a href="./?cmd=edit&amp;page=FrontPage"><img src="image/edit.png" width="20" height="20" alt="編集" title="編集" /></a>			<a href="./?cmd=freeze&amp;page=FrontPage"><img src="image/freeze.png" width="20" height="20" alt="凍結" title="凍結" /></a>	  <a href="./?cmd=diff&amp;page=FrontPage"><img src="image/diff.png" width="20" height="20" alt="差分" title="差分" /></a>	<a href="./?cmd=backup&amp;page=FrontPage"><img src="image/backup.png" width="20" height="20" alt="履歴" title="履歴" /></a>			<a href="./?plugin=attach&amp;pcmd=upload&amp;page=FrontPage"><img src="image/file.png" width="20" height="20" alt="添付" title="添付" /></a>		<a href="./?plugin=template&amp;refer=FrontPage"><img src="image/copy.png" width="20" height="20" alt="複製" title="複製" /></a>	<a href="./?plugin=rename&amp;refer=FrontPage"><img src="image/rename.png" width="20" height="20" alt="名前変更" title="名前変更" /></a> <a href="./"><img src="image/reload.png" width="20" height="20" alt="リロード" title="リロード" /></a> &nbsp;
+	<a href="./?plugin=newpage&amp;refer=FrontPage"><img src="image/new.png" width="20" height="20" alt="新規" title="新規" /></a> <a href="./?cmd=list"><img src="image/list.png" width="20" height="20" alt="一覧" title="一覧" /></a> <a href="./?cmd=search"><img src="image/search.png" width="20" height="20" alt="検索" title="検索" /></a> <a href="./?RecentChanges"><img src="image/recentchanges.png" width="20" height="20" alt="最終更新" title="最終更新" /></a> &nbsp; <a href="./?Help"><img src="image/help.png" width="20" height="20" alt="ヘルプ" title="ヘルプ" /></a> &nbsp; <a href="./?cmd=rss&amp;ver=1.0"><img src="image/rss.png" width="36" height="14" alt="最終更新のRSS" title="最終更新のRSS" /></a></div>
+
+<div id="lastmodified">Last-modified: 2022-12-08 (木) 10:12:09<span class="page_passage" data-mtime="2022-12-08T02:12:09+01:00"></span></div>
+
+<div id="related">Link: <a href="./?PukiWiki/1.4/Manual/Plugin/L-N">PukiWiki/1.4/Manual/Plugin/L-N</a><span class="page_passage" data-mtime="2022-12-08T02:08:26+01:00"></span>
+ <a href="./?PukiWiki/1.4/Manual/Plugin/O-R">PukiWiki/1.4/Manual/Plugin/O-R</a><span class="page_passage" data-mtime="2022-12-08T02:08:25+01:00"></span></div>
+
+<div id="footer">
+ Site admin: <a href="http://pukiwiki.example.com/">anonymous</a>
+ <p>
+ <strong>PukiWiki 1.5.4</strong> &copy; 2001-2022 <a href="https://pukiwiki.osdn.jp/">PukiWiki Development Team</a>.
+ Powered by PHP 7.4.33. HTML convert time: 0.008 sec.
+ </p>
+</div>
+</body>
+</html>
+null
